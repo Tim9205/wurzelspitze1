@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+
+  <title>Wurzelspitze – Übungswebsite</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+
+<button id="nach-oben"
+        type="button"
+        aria-label="Zurück nach oben">
+
+  <svg width="26" height="26"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="currentColor"
+       stroke-width="3.5"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       aria-hidden="true">
+
+    <path d="M12 19V5" />
+    <path d="M5 12l7-7 7 7" />
+
+  </svg>
+
+</button>
+
+
+<body>
+  
+<header>
+  
+<div class="kopf-obenzeile">
+
+  
+<div class="praxis-branding">
+
+  <a href="index.html" class="logo-bild-link">
+    <img
+      src="bilder/logo.png"
+      alt="Logo Zahnarztpraxis Wurzelspitze"
+      class="praxis-logo">
+  </a>
+
+  <div class="praxisname">
+    <a class="logo" href="index.html">
+      ZAHNARZTPRAXIS WURZELSPITZE
+    </a>
+
+  </div>
+
+</div>
+
+
+  <a class="notfall-button" href="notfall.html">
+
+    <svg width="22" height="22"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="1.8"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         aria-hidden="true">
+
+      <path d="M12 4
+        C8 1.5 4.5 3.5 4.5 9
+        C4.5 13 7 20 9 20
+        C10.7 20 9.7 14 12 14
+        S13.3 20 15 20
+        C17 20 19.5 13 19.5 9
+        C19.5 3.5 16 1.5 12 4Z"/>
+    </svg>
+
+    <span>Notfall-Service</span>
+
+  </a>
+
+</div>
+
+
+  <button
+    class="menu-button"
+    id="menu-button"
+    type="button"
+    aria-label="Menü öffnen"
+    aria-expanded="false"
+    aria-controls="hauptmenue">
+    ☰
+  </button>
+
+  
+
+<nav id="hauptmenue" aria-label="Hauptnavigation">
+  <a href="index.html" aria-current="page">Startseite</a>
+  <a href="leistungen.html">Leistungen</a>
+  <a href="team.html">Team</a>
+  <a href="kontakt.html">Kontakt</a>
+  <a href="kontakt.html#faq">FAQ</a>
+</nav>
+
+
+</header>
+
+
+  <main>
+    <section class="hero" id="start">
+      <p class="eyebrow">ZAHNARZTPRAXIS WURZELSPITZE</p>
+
+      <h1>Zahnmedizin zum Wohlfühlen.</h1>
+
+      <p>
+        Moderne Zahnmedizin. Persönliche Betreuung.
+        Eine ruhige Atmosphäre.
+      </p>
+
+      <a class="button" href="#leistungen">
+        Unsere Leistungen →
+      </a>
+    </section>
+
+    <section class="bereich" id="leistungen">
+      <h2>Unsere Leistungen</h2>
+
+      <div class="karten">
+        <article>
+          <h3>Allgemeine Zahnmedizin</h3>
+          <p>Vorsorge und Zahngesundheit.</p>
+        </article>
+
+        <article>
+          <h3>Endodontie</h3>
+          <p>Erhalt natürlicher Zähne.</p>
+        </article>
+
+        <article>
+          <h3>Parodontologie</h3>
+          <p>Gesundheit des Zahnhalteapparats.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="bereich" id="kontakt">
+      <h2>Über unser Lernprojekt</h2>
+      <p>Diese Website ist eine Programmierübung.</p>
+
+      <button id="mehr-button"
+              aria-expanded="false"
+              aria-controls="mehr-text">
+        Mehr erfahren
+      </button>
+
+
+      <p id="mehr-text" hidden>
+        Diese Beispielwebsite wurte zu Trainingszecken selbst erstellt.
+      </p>
+<section class="bereich" id="faq">
+
+  <h2>Häufig gestellte Fragen</h2>
+
+  <div class="faq-item">
+    <button class="faq-frage"
+            type="button"
+            aria-expanded="false">
+      Bieten Sie eine Zahnreinigung an?
+      <span>+</span>
+    </button>
+
+    <div class="faq-antwort" hidden>
+      <p>
+        Ja, wir bieten professionelle Zahnreinigungen
+        und individuelle Prophylaxe an.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-frage"
+            type="button"
+            aria-expanded="false">
+      Was ist eine Wurzelkanalbehandlung?
+      <span>+</span>
+    </button>
+
+    <div class="faq-antwort" hidden>
+      <p>
+        Eine Wurzelkanalbehandlung kann helfen,
+        einen erkrankten Zahn zu erhalten.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-frage"
+            type="button"
+            aria-expanded="false">
+      Wie kann ich einen Termin vereinbaren?
+      <span>+</span>
+    </button>
+
+    <div class="faq-antwort" hidden>
+      <p>
+        Informationen zur Terminvereinbarung
+        werden hier später ergänzt.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Testwebseite der Potentiellen Praxis WURZELSPITZE.</p>
+  </footer>
+</body>
+</html>

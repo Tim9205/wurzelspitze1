@@ -1,0 +1,732 @@
+
+:root {
+  --gruen: #535e3d;
+  --sand: #789a5b76;
+  --text: #30392b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Trebuchet MS, sans-serif;
+  color: var(--text);
+  background: var(--sand);
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 8%;
+  background: white;
+}
+
+.logo {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+a {
+  color: var(--gruen);
+  text-decoration: none;
+}
+
+.hero {
+  background: #e6e7dc;
+  padding: 90px 8%;
+}
+
+.eyebrow {
+  color: var(--gruen);
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: clamp(32px, 5vw, 60px);
+  line-height: 1.15;
+  max-width: 650px;
+}
+
+.button, button {
+  display: inline-block;
+  background: var(--gruen);
+  color: white;
+  padding: 13px 22px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.bereich {
+  padding: 60px 8%;
+}
+
+.karten {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+article {
+  background: #535e3d;
+  color: white;
+  padding: 20px;
+  border-radius: 24px;
+  text-align: center;
+}
+
+/* Ãœberschrift in den Karten */
+article h3 {
+  color: white;
+  font-size: 22px;
+}
+
+/* Beschreibungstext in den Karten */
+article p {
+  color: white;
+  font-size: 16px;
+}
+
+
+button:hover, .button:hover {
+  background: #35402b;
+}
+
+footer {
+  background: #e8e8e1;
+  padding: 20px;
+  text-align: center;
+}
+
+@media (max-width: 650px) {
+  header {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .hero {
+    padding: 50px 8%;
+  }
+
+  .karten {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* TABLET */
+/* Gilt bis zu einer Bildschirmbreite von 1024px */
+
+@media (max-width: 1024px) {
+
+  .karten {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .hero {
+    padding: 70px 6%;
+  }
+
+  .bereich {
+    padding: 50px 6%;
+  }
+}
+
+
+/* SMARTPHONE */
+/* Gilt bis zu einer Bildschirmbreite von 650px */
+
+@media (max-width: 650px) {
+
+  header {
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px 5%;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 50px 6%;
+  }
+
+  .karten {
+    grid-template-columns: 1fr;
+  }
+
+  .bereich {
+    padding: 35px 6%;
+  }
+
+  .button,
+  button {
+    max-width: 100%;
+  }
+}
+
+/* SMARTPHONE-MENÃœ */
+
+/* Auf groÃŸen Bildschirmen verstecken */
+.menu-button {
+  display: none;
+}
+
+/* FÃ¼r Smartphones bis 650px Breite */
+@media (max-width: 650px) {
+
+  header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-button {
+    display: block;
+    background: var(--gruen);
+    color: white;
+    font-size: 26px;
+    padding: 5px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    background: #e6e7dc;
+    padding: 15px;
+    border-radius: 8px;
+    gap: 15px;
+  }
+
+  nav.offen {
+    display: flex;
+  }
+}
+
+/* FAQ-BEREICH */
+
+.faq-item {
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.faq-frage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  background: white;
+  color: var(--text);
+
+  padding: 20px;
+  border: none;
+  border-radius: 0;
+
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-frage:hover {
+  background: #e6e7dc;
+}
+
+.faq-frage span {
+  font-size: 24px;
+  margin-left: 15px;
+}
+
+.faq-antwort {
+  padding: 0 20px 20px;
+  color: var(--text);
+}
+
+.faq-antwort p {
+  margin: 0;
+}
+
+.faq-antwort[hidden] {
+  display: none;
+}
+
+
+/* Nach-oben-Button â€“ bereinigte Version */
+#nach-oben {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  background: rgba(83, 94, 61, 0.4);
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s, visibility 0.3s, background-color 0.2s;
+}
+
+#nach-oben.sichtbar {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+#nach-oben svg {
+  display: block;
+  width: 26px;
+  height: 26px;
+}
+
+/* NEUE KOPFZEILE */
+
+/* Praxisname links */
+.praxisname {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.praxisname .logo {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.praxisname span {
+  font-size: 12px;
+  color: #686e60;
+}
+
+/* Navigation als Kacheln */
+header nav {
+  display: flex;
+  gap: 8px;
+}
+
+header nav a {
+  display: inline-block;
+  padding: 12px 18px;
+
+  background: #f0f0ea;
+  color: var(--gruen);
+
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Wenn die Maus Ã¼ber einer Kachel ist */
+header nav a:hover {
+  background: #dfe4d8;
+}
+
+/* Aktuell geÃ¶ffnete Seite */
+header nav a[aria-current="page"] {
+  background: var(--gruen);
+  color: white;
+}
+
+/* Smartphone-Ansicht */
+@media (max-width: 650px) {
+
+  .praxisname .logo {
+    font-size: 18px;
+  }
+
+  .praxisname span {
+    font-size: 10px;
+  }
+
+  header nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  header nav.offen {
+    display: flex;
+  }
+
+  header nav a {
+    width: 100%;
+  }
+}
+
+/* ZWEIZEILIGE KOPFZEILE â€“ DESKTOP */
+
+@media (min-width: 651px) {
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 22px;
+    padding: 25px 5%;
+  }
+
+  /* Praxisname in der ersten Zeile */
+  .praxisname {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  /* MenÃ¼ Ã¼ber gesamte Breite */
+  header nav {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+  }
+
+  /* Alle MenÃ¼kacheln gleich groÃŸ */
+  header nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+    padding: 14px 8px;
+    text-align: center;
+    border-radius: 8px;
+  }
+}
+
+/* NOTFALL-BUTTON IN DER KOPFZEILE */
+
+.kopf-obenzeile {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.notfall-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  background: #ff0000;
+  color: white;
+
+  padding: 13px 20px;
+  border-radius: 9px;
+
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: background-color 0.3s;
+}
+
+.notfall-button:hover {
+  background: #ff0000;
+  color: white;
+}
+
+.notfall-button svg {
+  flex-shrink: 0;
+}
+
+/* DESKTOP UND TABLET */
+
+@media (min-width: 651px) {
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  header nav {
+    grid-column: 1;
+    grid-row: 2;
+
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    gap: 10px;
+    width: 100%;
+  }
+}
+
+/* SMARTPHONE */
+
+@media (max-width: 650px) {
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .kopf-obenzeile {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    gap: 10px;
+  }
+
+  .notfall-button {
+    padding: 10px;
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .notfall-button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .menu-button {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: end;
+  }
+
+  header nav {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+}
+
+/* NOTFALL-SEITE */
+
+.notfall-seite {
+  background: var(--sand);
+}
+
+.notfall-einleitung {
+  padding: 60px 8% 30px;
+}
+
+.notfall-inhalt {
+  padding: 0 8% 70px;
+  display: grid;
+  gap: 24px;
+}
+
+.notfall-karte {
+  display: block;
+  text-align: left;
+  background: white;
+  padding: 32px;
+  border-radius: 14px;
+  color: var(--text);
+}
+
+.notfall-karte h2 {
+  font-size: 25px;
+  margin-top: 0;
+}
+
+.praxis-kontakt {
+  border-left: 5px solid var(--gruen);
+}
+
+.bereitschaft {
+  background: #fff5f3;
+  border-left: 5px solid #ff0000;
+}
+
+.notfall-nummer {
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: bold;
+  color: var(--gruen);
+}
+
+.bereitschaft .notfall-nummer {
+  color: #ff0000;
+}
+
+.notfall-anrufen {
+  display: inline-block;
+  padding: 15px 20px;
+  background: #ff0000;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.notfall-anrufen:hover {
+  background: #ff0000;
+  color: white;
+}
+
+.notfall-hinweis {
+  font-size: 13px;
+  color: #665F5D;
+}
+
+.notfall-wichtig {
+  padding: 25px 30px;
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #e6d0cd;
+}
+
+.notfall-wichtig a {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+@media (max-width: 650px) {
+  .notfall-einleitung {
+    padding: 40px 6% 25px;
+  }
+
+  .notfall-inhalt {
+    padding: 0 6% 50px;
+  }
+
+  .notfall-karte {
+    padding: 24px;
+  }
+}
+
+/* Textfarbe im Notdienst-Kasten */
+
+.bereitschaft p {
+  color: #665F5D;
+}
+
+/* Telefonnummer bleibt rot */
+
+.bereitschaft .notfall-nummer {
+  color: #ff0000;
+}
+
+.notfall-karte.bereitschaft p:not(.notfall-nummer) {
+  color: #665F5D;
+}
+
+/* Textfarbe in der Karte Ã–ffnungszeiten */
+
+.praxis-kontakt p {
+  color: #665F5D;
+}
+
+/* Praxis-Telefonnummer bleibt olivgrÃ¼n */
+
+.praxis-kontakt .notfall-nummer {
+  color: #535E3D;
+}
+
+
+/* Anordnung der beiden Notdienst-Buttons */
+
+.notdienst-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+/* Beide Buttons immer gleich gestalten */
+
+.notdienst-buttons .notfall-anrufen,
+.bereitschaft .notdienst-buttons .notfall-anrufen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 65px;
+
+  padding: 15px;
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+  white-space: normal;
+}
+
+/* Wenn der Platz zu klein wird:
+   sofort beide Buttons untereinander */
+
+@media (max-width: 900px) {
+
+  .notdienst-buttons {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* PRAXISLOGO IN DER KOPFZEILE */
+
+.praxis-branding {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 0;
+}
+
+.logo-bild-link {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.praxis-logo {
+  display: block;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+/* Smartphone */
+
+@media (max-width: 650px) {
+
+  .praxis-branding {
+    gap: 8px;
+  }
+
+  .praxis-logo {
+    width: 42px;
+    height: 42px;
+  }
+
+}
